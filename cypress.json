@@ -1,0 +1,7 @@
+{
+  "requestTimeout": 60000,
+  "pageLoadTimeout":60000,
+   "video": true,
+   "screenshotOnRunFailure": true,
+    "testFiles": "**/*.feature"
+  }

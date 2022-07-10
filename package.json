@@ -1,0 +1,27 @@
+{
+  "name": "cypress_bdd",
+  "version": "1.0.0",
+  "description": "BDD project using cypress and cucumber",
+  "main": "index.js",
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": "cypress/integration/StepDef",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/report/cucumber-json",
+      "fileSuffix": ".cucumber",
+      "filePrefix": ""
+    }
+  },
+  "devDependencies": {
+    "cypress": "^9.5.2",
+    "cypress-cucumber-preprocessor": "4.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vinay S C",
+  "license": "ISC",
+  "dependencies": {
+    "multiple-cucumber-html-reporter": "^1.21.4"
+  }
+}

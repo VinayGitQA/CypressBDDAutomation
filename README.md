@@ -23,8 +23,8 @@ cypress.json
 Dockerfile
 package.json
 
-Folder details
---------------
+Framework folder details
+------------------------
 1. integration : Following sub folders are present 
  a. scenarioFiles: This folder contains files with extenstion ".feature", each 
                  file contains scenarios written in Gherkin language, using keywords "Given, When, Then, And" 
@@ -79,26 +79,31 @@ cypress.json : This folder contains cypress and test related configurations.
 
 Dockerfile: This file has details of the docker configuration, that is used to build image and execute the scripts
 
-command to run the 
+ 
+How to execute ?:
+---------------
+1. Download the code to your local repository
+2. Run below code to create Docker image 
+    docker build -t cypress-bdd-image:1.1.0 .
+3. Use Docker run command to execute the scenario as below
+    To execute in chrome browser 
+    ---------------------------
+    docker run -i -v ${PWD}:/cypress_bdd_project -t cypress-bdd-image:1.1.0  -b chrome --spec cypress/integration/scenarioFiles/**.feature; node ./generatehtml.js
+    
+    To execute in Firefox browser
+    -----------------------------
+    docker run -i -v ${PWD}:/cypress_bdd_project -t cypress-bdd-image:1.1.0  -b firefox --spec cypress/integration/scenarioFiles/**.feature; node ./generatehtml.js
+
+Note: There is a open issue on cypress failing to run test cases in Firefox, below
+url proides more insight: https://github.com/cypress-io/cypress/issues/22086
 
 
 
+Execution output:
+----------------
+following folders are created inside cypress folder after executoin
 
-               
-                 
-
-
-
-         
-
-
-
-
-
-Build the Image using the command
-docker build -t cypress-bdd-image:1.0.0
-
-docker 
-
-
-docker run -i -v "%cd%":/cypress_bdd_project -t cypress-bdd-image:1.0.0 --spec cypress/integration/scenarioFiles/**.feature
+video : This folder contains a video of test execution in the compress format
+report: This folder contains execution report in .json file format
+htmlreport: This folder contains index.html file.
+                
