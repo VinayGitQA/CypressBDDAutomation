@@ -1,11 +1,12 @@
 Cypress-BDD project
 --------------------
+```
 This is a framework that uses POM to build a folder structure that supports BDD using Cucumber
 *Test scenrios are written in the form of Gherkins language in a file format ".feature"
 *Page object model(POM) design pattern is used to manage the webelements and corresponding functions 
 *JSON report is generated at the end of execution, which is converted to html using a plugin.
 *Project is Dockerized 
-
+```
 
 Folder Structure
 -----------------
